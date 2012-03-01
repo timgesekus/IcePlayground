@@ -6,7 +6,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 
 	<properties>
-		<ice.include.path>/usr/share/Ice-3.4.2/slice/Ice</ice.include.path>
+		<ice.include.path>D:\Program Files (x86)\ZeroC\Ice-3.4.2\slice\Ice</ice.include.path>
 		<ice.home>D:\Program Files (x86)\ZeroC\Ice-3.4.2</ice.home>
 	</properties>
 
@@ -30,7 +30,7 @@
 						<fileset>
 							<directory>src/generated/java</directory>
 							<includes>
-								<include>entities</include>
+								<include>**</include>
 							</includes>
 							<followSymlinks>false</followSymlinks>
 						</fileset>
@@ -48,7 +48,7 @@
 								<taskdef name="slice2java" classname="Slice2JavaTask"
 									classpathref="maven.plugin.classpath" />
 								<slice2java outputdir="src/generated/java">
-									<fileset dir="src/main/resources" includes="Printer.ice" />
+									<fileset dir="src/main/resources" includes="*.ice" />
 									<includepath>
 										<pathelement path="${ice.include.path}" />
 									</includepath>
@@ -89,4 +89,11 @@
 			</plugin>
 		</plugins>
 	</build>
+	<dependencies>
+		<dependency>
+			<groupId>com.zeroc</groupId>
+			<artifactId>ice</artifactId>
+			<version>3.4.2</version>
+		</dependency>
+	</dependencies>
 </project>

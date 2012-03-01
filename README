@@ -1,0 +1,7 @@
+My little project to toy around with ice
+
+Goals are:
+  Create some entities like flight, flightplan
+  Build some managers that hide network things
+  like FlightManager, IcaoFlightPlanManager
+  
